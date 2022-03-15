@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Mar 2022 pada 17.31
+-- Waktu pembuatan: 15 Mar 2022 pada 23.33
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -45,7 +45,14 @@ INSERT INTO `detailfasilitaskamar` (`iddetailfasilitaskamar`, `fasilitasid`, `ka
 (7, 9, 3, '2022-03-12 11:02:57', '2022-03-12 11:02:57'),
 (8, 8, 4, '2022-03-12 11:24:40', '2022-03-12 11:24:40'),
 (9, 9, 5, '2022-03-12 11:25:45', '2022-03-12 11:25:45'),
-(10, 9, 6, '2022-03-12 11:32:03', '2022-03-12 11:32:03');
+(10, 9, 6, '2022-03-12 11:32:03', '2022-03-12 11:32:03'),
+(11, 9, 7, '2022-03-12 17:04:47', '2022-03-12 17:04:47'),
+(12, 8, 8, '2022-03-13 07:17:37', '2022-03-13 07:17:37'),
+(13, 9, 8, '2022-03-13 07:17:37', '2022-03-13 07:17:37'),
+(14, 8, 9, '2022-03-14 13:59:57', '2022-03-14 13:59:57'),
+(15, 9, 9, '2022-03-14 13:59:57', '2022-03-14 13:59:57'),
+(16, 8, 11, '2022-03-14 19:09:46', '2022-03-14 19:09:46'),
+(17, 9, 11, '2022-03-14 19:09:46', '2022-03-14 19:09:46');
 
 -- --------------------------------------------------------
 
@@ -129,12 +136,12 @@ CREATE TABLE `kamar` (
 --
 
 INSERT INTO `kamar` (`idkamar`, `namakamar`, `jumlahbed`, `harga`, `jumlahqty`, `description`, `created_at`, `update_at`, `tipekamarid`) VALUES
-(1, 'Kamar 1', 3, 200000, 2, 'Tersedia', '2022-03-11 18:34:38', '2022-03-11 18:34:38', 3),
-(2, 'Kamar 2', 2, 200000, 1, 'Sangat Bagus', '2022-03-11 20:12:50', '2022-03-11 20:12:50', 3),
-(3, 'Kamar 4', 1, 1, 1, '1', '2022-03-12 10:59:27', '2022-03-12 10:59:27', 1),
-(4, 'Kamar 3', 1, 1, 1, '1', '2022-03-12 11:24:40', '2022-03-12 11:24:40', 1),
 (5, 'Kamar 8', 1, 1, 1, '1', '2022-03-12 11:25:45', '2022-03-12 11:25:45', 3),
-(6, 'Kamar 4', 3, 3, 3, '3', '2022-03-12 11:32:03', '2022-03-12 11:32:03', 1);
+(6, 'Kamar 4', 3, 3, 3, '3', '2022-03-12 11:32:03', '2022-03-12 11:32:03', 1),
+(7, 'Kamar 5 new', 1, 1, 1, '1', '2022-03-12 17:04:47', '2022-03-12 17:04:47', 3),
+(8, 'Kamar 1 new 1', 1, 200000, 2, 'Sangat Baik', '2022-03-13 07:17:37', '2022-03-13 07:17:37', 3),
+(9, 'Kamar 1', 1, 200000, 12, '<p>Sangat Bagus</p>\r\n', '2022-03-14 13:59:57', '2022-03-14 13:59:57', 3),
+(11, 'Kamar 4', 1, 1000, 1, '<p>bagus</p>\r\n', '2022-03-14 19:09:46', '2022-03-14 19:09:46', 3);
 
 -- --------------------------------------------------------
 
@@ -157,11 +164,12 @@ CREATE TABLE `kamargalery` (
 --
 
 INSERT INTO `kamargalery` (`idkamargalery`, `url`, `text`, `is_active`, `kamarid`, `created_at`, `updated_at`) VALUES
-(1, '2155', '0', 'YES', 2, '2022-03-11 20:12:50', '2022-03-11 20:12:50'),
-(2, '8100', '0', 'YES', 3, '2022-03-12 10:59:27', '2022-03-12 10:59:27'),
-(3, '6352', '0', 'YES', 4, '2022-03-12 11:24:40', '2022-03-12 11:24:40'),
-(4, '7825-IMG-Picture.jpg', '', 'YES', 5, '2022-03-12 11:25:45', '2022-03-12 11:25:45'),
-(5, '6101-IMG-Picture.jpg', '', 'YES', 6, '2022-03-12 11:32:03', '2022-03-12 11:32:03');
+(4, '7239-IMG-Picture.jpg', '', 'YES', 5, '2022-03-12 11:25:45', '2022-03-12 11:25:45'),
+(5, '6101-IMG-Picture.jpg', '', 'YES', 6, '2022-03-12 11:32:03', '2022-03-12 11:32:03'),
+(6, '4121-IMG-Picture.jpg', '', 'YES', 7, '2022-03-12 17:04:47', '2022-03-12 17:04:47'),
+(7, '5377-IMG-Picture.jpg', '', 'YES', 8, '2022-03-13 07:17:37', '2022-03-13 07:17:37'),
+(8, '9092-IMG-Picture.jpg', '', 'YES', 9, '2022-03-14 13:59:57', '2022-03-14 13:59:57'),
+(9, '6505-IMG-Picture.jpg', '', 'YES', 11, '2022-03-14 19:09:46', '2022-03-14 19:09:46');
 
 -- --------------------------------------------------------
 
@@ -178,6 +186,18 @@ CREATE TABLE `rating` (
   `kamarid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `rating`
+--
+
+INSERT INTO `rating` (`idrating`, `value`, `created_at`, `updated_at`, `tamuid`, `kamarid`) VALUES
+(1, 4, '2022-03-12 19:04:17', '2022-03-12 19:04:17', 1, 5),
+(2, 5, '2022-03-12 19:08:57', '2022-03-12 19:08:57', 1, 5),
+(3, 1, '2022-03-12 19:09:12', '2022-03-12 19:09:12', 1, 5),
+(4, 3, '2022-03-13 07:16:56', '2022-03-13 07:16:56', 2, 6),
+(5, 3, '2022-03-13 07:18:07', '2022-03-13 07:18:07', 1, 8),
+(6, 5, '2022-03-13 07:29:04', '2022-03-13 07:29:04', 2, 8);
+
 -- --------------------------------------------------------
 
 --
@@ -186,37 +206,39 @@ CREATE TABLE `rating` (
 
 CREATE TABLE `reservasi` (
   `idreservasi` int(11) NOT NULL,
-  `stardate` date NOT NULL,
+  `startdate` date NOT NULL,
   `enddate` date NOT NULL,
   `lama` int(11) NOT NULL,
-  `userqty` int(11) NOT NULL,
-  `status` enum('reservasi','cekin','cekout','cancel') NOT NULL DEFAULT 'reservasi',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `update_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `approved_by` int(11) NOT NULL,
-  `canceled_by` int(11) NOT NULL,
+  `qtykamar` int(11) NOT NULL,
+  `status` enum('reservasi','checkin','checkout','cancel') NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `update_at` timestamp NULL DEFAULT NULL,
+  `approved_by` int(11) DEFAULT NULL,
+  `canceled_by` int(11) DEFAULT NULL,
   `approved_date` datetime NOT NULL,
   `canceled_date` datetime NOT NULL,
-  `tamu_id` int(11) NOT NULL,
-  `kamarid` int(11) NOT NULL,
-  `jumlah_kamar` int(11) NOT NULL
+  `tamuid` int(11) NOT NULL,
+  `kamarid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `reservasi`
+--
+
+INSERT INTO `reservasi` (`idreservasi`, `startdate`, `enddate`, `lama`, `qtykamar`, `status`, `created_at`, `update_at`, `approved_by`, `canceled_by`, `approved_date`, `canceled_date`, `tamuid`, `kamarid`) VALUES
+(1, '2022-03-13', '2022-03-13', 1, 1, 'checkout', NULL, NULL, NULL, NULL, '2022-03-13 08:50:23', '2022-03-13 08:50:23', 1, 5);
 
 --
 -- Trigger `reservasi`
 --
 DELIMITER $$
-CREATE TRIGGER `reservasi` AFTER UPDATE ON `reservasi` FOR EACH ROW BEGIN
-IF new.status='cekin' THEN
-BEGIN
-UPDATE kamar SET jumlah=jumlah-old.jumlah_kamar WHERE idkamar-old.kamarid;
-end;
-END IF;
-IF new.status='cekout' THEN
-BEGIN
-UPDATE kamar SET jumlah=jumlah+old.jumlah_kamar WHERE idkamar=old.kamarid;
-end;
-END IF;
+CREATE TRIGGER `trigger_hotel` AFTER UPDATE ON `reservasi` FOR EACH ROW BEGIN
+	IF new.status='checkin' THEN
+    	UPDATE kamar SET jumlahqty=jumlahqty-old.qtykamar WHERE idkamar = old.kamarid;
+    END IF;
+    IF new.status='checkout' THEN
+    	UPDATE kamar SET jumlahqty=jumlahqty+old.qtykamar WHERE idkamar = old.kamarid;
+    END IF;
 END
 $$
 DELIMITER ;
@@ -236,6 +258,13 @@ CREATE TABLE `review` (
   `kamarid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `review`
+--
+
+INSERT INTO `review` (`idreview`, `review`, `created_at`, `updated_at`, `tamuid`, `kamarid`) VALUES
+(1, 'Sangat Bagus', '2022-03-12 19:05:45', '2022-03-12 19:05:45', 1, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -246,15 +275,23 @@ CREATE TABLE `tamu` (
   `idtamu` int(11) NOT NULL,
   `nik` varchar(100) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jk` enum('laki-laki','perempuan') NOT NULL,
+  `jeniskelamin` enum('laki-laki','perempuan') NOT NULL,
   `alamat` text NOT NULL,
   `telepon` varchar(15) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` text NOT NULL,
   `ismember` enum('YA','NO') NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` date NOT NULL DEFAULT current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tamu`
+--
+
+INSERT INTO `tamu` (`idtamu`, `nik`, `nama`, `jeniskelamin`, `alamat`, `telepon`, `username`, `password`, `ismember`, `created_at`, `updated_at`) VALUES
+(1, '123456789', 'Lukman Aditiya', 'laki-laki', 'Sindanggalih, Indonesia', '089510396303', 'lukmanadty', '123456789', 'YA', '2022-03-12 18:41:17', '2022-03-12 17:00:00'),
+(2, '123456789', 'Lukman', 'laki-laki', 'Indonesia', '08', 'lukman@gmail.com', '12345', 'YA', '2022-03-13 07:16:11', '2022-03-12 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -291,18 +328,20 @@ CREATE TABLE `users` (
   `notelepon` varchar(20) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
+  `is_active` char(1) NOT NULL,
   `role` enum('ADMIN','RECEPTIONIST') NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `update_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `photo` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `update_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`idusers`, `namauser`, `jk`, `alamat`, `notelepon`, `username`, `password`, `role`, `created_at`, `update_at`) VALUES
-(1, 'Bernaldi Rizki Pratama', 'laki-laki', 'Cilacap', '085876398661', 'bernaldirizkipratama@gmail.com', 'kikicici', 'ADMIN', '2022-03-06 06:35:08', '2022-03-06 06:35:08'),
-(2, 'Rina Noni Novia', 'perempuan', 'Indonesia', '099999999999', 'rina@gmail.com', '111111', 'ADMIN', '2022-03-08 11:34:51', '2022-03-08 11:34:51');
+INSERT INTO `users` (`idusers`, `namauser`, `jk`, `alamat`, `notelepon`, `username`, `password`, `is_active`, `role`, `photo`, `created_at`, `update_at`) VALUES
+(3, 'Lukman Aditiya', 'laki-laki', 'Sindanggalih', '089510396303', 'lukman@admin.com', '$2y$10$DJmxSoQOJKZLJRBTsv7o0u5T9JWRLiWwoiA78ua0WY0.JVzYNtCXK', 'Y', 'ADMIN', '3603-IMG-Picture.jpg', '2022-03-15 19:14:51', '2022-03-15 19:14:51'),
+(4, 'Lukman Aditiya', 'laki-laki', 'Indonesia', '089510396303', 'lukman@resepsionis.com', '$2y$10$.OTDsRtmKC0lWmEsXx9x5OWwb4PnW/w2YjBkA7R5PkobfnAYocj82', 'Y', 'RECEPTIONIST', '1718-IMG-Picture.jpg', '2022-03-15 19:28:08', '2022-03-15 19:28:08');
 
 -- --------------------------------------------------------
 
@@ -386,7 +425,8 @@ ALTER TABLE `rating`
 --
 ALTER TABLE `reservasi`
   ADD PRIMARY KEY (`idreservasi`),
-  ADD KEY `tamu_id` (`tamu_id`);
+  ADD KEY `tamu_id` (`tamuid`),
+  ADD KEY `kamarid` (`kamarid`);
 
 --
 -- Indeks untuk tabel `review`
@@ -423,7 +463,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `detailfasilitaskamar`
 --
 ALTER TABLE `detailfasilitaskamar`
-  MODIFY `iddetailfasilitaskamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `iddetailfasilitaskamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `detailreservasi`
@@ -447,37 +487,37 @@ ALTER TABLE `fasilitas`
 -- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `idkamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idkamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `kamargalery`
 --
 ALTER TABLE `kamargalery`
-  MODIFY `idkamargalery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idkamargalery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `reservasi`
 --
 ALTER TABLE `reservasi`
-  MODIFY `idreservasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idreservasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `idreview` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idreview` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tamu`
 --
 ALTER TABLE `tamu`
-  MODIFY `idtamu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tipekamar`
@@ -489,7 +529,7 @@ ALTER TABLE `tipekamar`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `idusers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idusers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -500,6 +540,27 @@ ALTER TABLE `users`
 --
 ALTER TABLE `kamar`
   ADD CONSTRAINT `kamar_ibfk_1` FOREIGN KEY (`tipekamarid`) REFERENCES `tipekamar` (`idtipekamar`);
+
+--
+-- Ketidakleluasaan untuk tabel `rating`
+--
+ALTER TABLE `rating`
+  ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`tamuid`) REFERENCES `tamu` (`idtamu`),
+  ADD CONSTRAINT `rating_ibfk_2` FOREIGN KEY (`kamarid`) REFERENCES `kamar` (`idkamar`);
+
+--
+-- Ketidakleluasaan untuk tabel `reservasi`
+--
+ALTER TABLE `reservasi`
+  ADD CONSTRAINT `reservasi_ibfk_1` FOREIGN KEY (`tamuid`) REFERENCES `tamu` (`idtamu`),
+  ADD CONSTRAINT `reservasi_ibfk_2` FOREIGN KEY (`kamarid`) REFERENCES `kamar` (`idkamar`);
+
+--
+-- Ketidakleluasaan untuk tabel `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`tamuid`) REFERENCES `tamu` (`idtamu`),
+  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`kamarid`) REFERENCES `kamar` (`idkamar`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
