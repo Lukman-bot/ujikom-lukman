@@ -8,6 +8,7 @@ class FasilitasHotel extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mod_fasilitashotel','MFH');
+        cek_login();
     }
 
     public function Index()

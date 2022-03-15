@@ -10,3 +10,13 @@ function check_akses($kamarid, $fasilitasid)
         return "checked='checked'";
     }
 }
+
+function cek_login()
+{
+    $ci = get_instance();
+    $ci->db->where('username', $ci->session->userdata('username'));
+    $hasil = $ci->db->get('users');
+    if($hasil->row_array() <= 0) {
+        redirect('Admin/Auth', 'refresh');
+    }
+}

@@ -8,6 +8,7 @@ class Kamar extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mod_kamar','MK');
+        cek_login();
     }
 
     public function Index()

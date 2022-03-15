@@ -1,11 +1,17 @@
-<?=
-    $this->session->flashdata('pesan');
-?>
+<?php if ($this->session->flashdata('pesan')) : ?>
+    <div class="alert alert-success">
+        <?= $this->session->flashdata('pesan') ?>
+    </div>
+<?php endif ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">
-            <div class="box-header">
-                <a href="<?= base_url() ?>index.php/Admin/Kamar/" class="btn btn-warning btn-sm pull-right">Kembali</a>
+            <div class="box-header with-border">
+                <a href="<?= base_url('index.php/Admin/Kamar/') ?>">
+                    <button class="btn btn-warning btn-md pull-right">
+                        <li class="fa fa-undo"></li> Kembali
+                    </button>
+                </a>
             </div>
             <div class="box-body">
                 <form action="<?= base_url() ?>index.php/Admin/Kamar/Add" method="POST" enctype="multipart/form-data">
@@ -31,11 +37,13 @@
                     </div>
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                        <div class="box-body pad">
+                            <textarea name="description" id="description" cols="80" rows="10"></textarea>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Tipe Kamar</label>
-                        <select name="tipekamar" id="tipekamar" class="form-control">
+                        <select name="tipekamar" id="tipekamar" class="minimal">
                             <option value="">-- Pilih Tipe Kamar --</option>
                             <?php
                                 foreach($datatipekamar as $tampilkantipe)

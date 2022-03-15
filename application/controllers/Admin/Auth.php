@@ -1,46 +1,62 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller
-{
+class Auth extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('Admin/Login');
-    }
-
-    public function Cek()
-    {
-        $this->form_validation->set_rules('username','Username','required');
-        $this->form_validation->set_rules('password','Password','required');
-        $this->form_validation->set_message('required','{field} tidak boleh kosong.!!');
-        if($this->form_validation->run() == FALSE) {
-            $this->load->view('Admin/Login');
+        if ($this->session->userdata('role') == 'ADMIN') {
+            redirect('Admin/Dashboard', 'refresh');
+        }
+        $this->validasi(); 
+        if ($this->form_validation->run() == false) {
+            $data['title']      = 'Login Page';
+            $this->load->view('Login', $data);
         } else {
-            $this->db->where('username',$this->input->post('username'));
-            $this->db->where('password',$this->input->post('password'));
-            $hasil = $this->db->get('users');
-            if($hasil->row_array()>0){
-                foreach ($hasil->result() as $ketemu) {
-                    $session_data=array(
-                        'username'  => $ketemu->username,
-                        'role'      => $ketemu->role,
-                        'nama'      => $ketemu->namauser
-                    );
-                    $this->session->set_userdata($session_data);
+            $this->db->where('username', $this->input->post('username', TRUE));
+            $this->db->where('is_active', 'Y');
+            $query = $this->db->get('users');
+            if ($query->row_array() > 0) {
+                foreach ($query->result() as $k) {
+                    if (password_verify($this->input->post('password', TRUE), $k->password)) {
+                        $session_data = array(
+                            'idusers'        => $k->idusers,
+                            'username'     => $k->username, 
+                            'role'      => $k->role,
+                            'namauser'      => $k->namauser,
+                            'photo'     => $k->photo
+                        );
+                        $this->session->set_userdata($session_data);
+
+                        redirect('Admin/Dashboard');
+                    } else {
+                        $this->session->set_flashdata('pesan', 'Password yang anda masukkan tidak sesuai, silahkan cek kembali');
+                        $data['title']      = 'Login Page';
+                        $this->load->view('Login', $data);
+                    }
                 }
-                $data=[
-                    'title'         => 'Dashboard',
-                    'judul'         => 'Dashboard',
-                    'breadcrumb1'   => 'Dashboard',
-                    'breadcrumb2'   => 'Dashboard'
-                ];
-                redirect('Admin/Dashboard', $data);
-            }else{
-                $this->session->set_flashdata('pesan','<div class="alert alert-warning">Username atau password tidak ditemukan.!</div>');
-                redirect('Admin/Auth/');
+            } else {
+                $this->session->set_flashdata('pesan', 'User yang anda cari tidak ditemukan.!');
+                $data['title']      = 'Login Page';
+                $this->load->view('Login', $data);
             }
         }
     }
-    
+
+    public function validasi()
+    {
+        $this->form_validation->set_rules('username', 'username', 'trim|required');
+        $this->form_validation->set_rules('password', 'password', 'trim|required');
+        $this->form_validation->set_message('required', '{field} tidak boleh kosong');
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('Auth', 'refresh');
+        die();
+    }
 }
+
+/* End of file Auth.php */
+/* Location: ./application/controllers/Auth.php */

@@ -8,6 +8,7 @@ class TipeKamar extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mod_tipekamar','MTK');
+        cek_login();
     }
 
     public function Index()
