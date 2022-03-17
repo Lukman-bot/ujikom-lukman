@@ -42,7 +42,7 @@
                                 echo "<td>$tampilkan->username</td>";
                                 echo "<td>$tampilkan->is_active</td>";
                                 echo "<td>$tampilkan->role</td>";
-                                echo "<td><img src=".base_url('upload/').$tampilkan->photo." width='100' ></td>";
+                                echo "<td><img src=".base_url('upload/user/').$tampilkan->photo." width='100' ></td>";
                                 echo "<td><a href=".base_url('index.php/Admin/User/Ubah/').$tampilkan->idusers."><button class='btn btn-primary btn-xs'><li class='fa fa-list'></li></button></a></td>";
                             echo "</tr>";
                             $no ++;

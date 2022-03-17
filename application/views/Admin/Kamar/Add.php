@@ -21,11 +21,6 @@
                         <div class="text-danger"><?= form_error('namakamar') ?></div>
                     </div>
                     <div class="form-group">
-                        <label>Jumlah Bed</label>
-                        <input type="number" class="form form-control" name="jumlahbed">
-                        <div class="text-danger"><?= form_error('jumlahbed') ?></div>
-                    </div>
-                    <div class="form-group">
                         <label>Harga Kamar</label>
                         <input type="number" class="form form-control" name="harga">
                         <div class="text-danger"><?= form_error('harga') ?></div>

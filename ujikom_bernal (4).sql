@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Mar 2022 pada 23.33
+-- Waktu pembuatan: 17 Mar 2022 pada 12.37
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -103,13 +103,13 @@ CREATE TABLE `fasilitas` (
 --
 
 INSERT INTO `fasilitas` (`idfasilitas`, `namafasilitas`, `icon`, `picture`, `jenisfasilitas`) VALUES
-(1, 'Shower', '', '7982-IMG-Picture.JPG', 'HOTEL'),
-(2, 'Kamar', '', '9512-IMG-Picture.JPG', 'HOTEL'),
-(3, 'Kasur', '', '9343-IMG-Picture.JPG', 'HOTEL'),
-(4, 'Shower', '', '1000-IMG-Picture.JPG', 'HOTEL'),
-(5, 'Shower', '', '6470-IMG-Picture.jpg', 'HOTEL'),
-(6, 'Shower', '', '4859-IMG-Picture.jpg', 'HOTEL'),
-(7, 'Shower', '', '4524-IMG-Picture.jpg', 'HOTEL'),
+(1, 'Shower', '', '6151-IMG-Picture.jpg', 'HOTEL'),
+(2, 'Kamar', '', '8931-IMG-Picture.jpg', 'HOTEL'),
+(3, 'Kasur', '', '8345-IMG-Picture.jpg', 'HOTEL'),
+(4, 'Shower', '', '3784-IMG-Picture.jpg', 'HOTEL'),
+(5, 'Shower', '', '8358-IMG-Picture.jpg', 'HOTEL'),
+(6, 'Shower', '', '2421-IMG-Picture.jpg', 'HOTEL'),
+(7, 'Shower', '', '5009-IMG-Picture.jpg', 'HOTEL'),
 (8, 'Kasur', 'fas fa-bed', '', 'KAMAR'),
 (9, 'Shower', 'fas fa-shower', '', 'KAMAR');
 
@@ -136,10 +136,10 @@ CREATE TABLE `kamar` (
 --
 
 INSERT INTO `kamar` (`idkamar`, `namakamar`, `jumlahbed`, `harga`, `jumlahqty`, `description`, `created_at`, `update_at`, `tipekamarid`) VALUES
-(5, 'Kamar 8', 1, 1, 1, '1', '2022-03-12 11:25:45', '2022-03-12 11:25:45', 3),
-(6, 'Kamar 4', 3, 3, 3, '3', '2022-03-12 11:32:03', '2022-03-12 11:32:03', 1),
-(7, 'Kamar 5 new', 1, 1, 1, '1', '2022-03-12 17:04:47', '2022-03-12 17:04:47', 3),
-(8, 'Kamar 1 new 1', 1, 200000, 2, 'Sangat Baik', '2022-03-13 07:17:37', '2022-03-13 07:17:37', 3),
+(5, 'Kamar 8', 1, 1, 1, '<p>1</p>\r\n', '2022-03-12 11:25:45', '2022-03-12 11:25:45', 3),
+(6, 'Kamar 4', 3, 3, 3, '<p>3</p>\r\n', '2022-03-12 11:32:03', '2022-03-12 11:32:03', 1),
+(7, 'Kamar 5 new', 1, 1, 1, '<p>1</p>\r\n', '2022-03-12 17:04:47', '2022-03-12 17:04:47', 3),
+(8, 'Kamar 1 new 1', 1, 200000, 2, '<p>Sangat Baik</p>\r\n', '2022-03-13 07:17:37', '2022-03-13 07:17:37', 3),
 (9, 'Kamar 1', 1, 200000, 12, '<p>Sangat Bagus</p>\r\n', '2022-03-14 13:59:57', '2022-03-14 13:59:57', 3),
 (11, 'Kamar 4', 1, 1000, 1, '<p>bagus</p>\r\n', '2022-03-14 19:09:46', '2022-03-14 19:09:46', 3);
 
@@ -164,12 +164,12 @@ CREATE TABLE `kamargalery` (
 --
 
 INSERT INTO `kamargalery` (`idkamargalery`, `url`, `text`, `is_active`, `kamarid`, `created_at`, `updated_at`) VALUES
-(4, '7239-IMG-Picture.jpg', '', 'YES', 5, '2022-03-12 11:25:45', '2022-03-12 11:25:45'),
-(5, '6101-IMG-Picture.jpg', '', 'YES', 6, '2022-03-12 11:32:03', '2022-03-12 11:32:03'),
-(6, '4121-IMG-Picture.jpg', '', 'YES', 7, '2022-03-12 17:04:47', '2022-03-12 17:04:47'),
-(7, '5377-IMG-Picture.jpg', '', 'YES', 8, '2022-03-13 07:17:37', '2022-03-13 07:17:37'),
-(8, '9092-IMG-Picture.jpg', '', 'YES', 9, '2022-03-14 13:59:57', '2022-03-14 13:59:57'),
-(9, '6505-IMG-Picture.jpg', '', 'YES', 11, '2022-03-14 19:09:46', '2022-03-14 19:09:46');
+(4, '7491-IMG-Picture.jpg', '', 'YES', 5, '2022-03-12 11:25:45', '2022-03-12 11:25:45'),
+(5, '8841-IMG-Picture.jpg', '', 'YES', 6, '2022-03-12 11:32:03', '2022-03-12 11:32:03'),
+(6, '6126-IMG-Picture.jpg', '', 'YES', 7, '2022-03-12 17:04:47', '2022-03-12 17:04:47'),
+(7, '9128-IMG-Picture.jpg', '', 'YES', 8, '2022-03-13 07:17:37', '2022-03-13 07:17:37'),
+(8, '9915-IMG-Picture.jpg', '', 'YES', 9, '2022-03-14 13:59:57', '2022-03-14 13:59:57'),
+(9, '7135-IMG-Picture.jpg', '', 'YES', 11, '2022-03-14 19:09:46', '2022-03-14 19:09:46');
 
 -- --------------------------------------------------------
 
@@ -340,8 +340,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`idusers`, `namauser`, `jk`, `alamat`, `notelepon`, `username`, `password`, `is_active`, `role`, `photo`, `created_at`, `update_at`) VALUES
-(3, 'Lukman Aditiya', 'laki-laki', 'Sindanggalih', '089510396303', 'lukman@admin.com', '$2y$10$DJmxSoQOJKZLJRBTsv7o0u5T9JWRLiWwoiA78ua0WY0.JVzYNtCXK', 'Y', 'ADMIN', '3603-IMG-Picture.jpg', '2022-03-15 19:14:51', '2022-03-15 19:14:51'),
-(4, 'Lukman Aditiya', 'laki-laki', 'Indonesia', '089510396303', 'lukman@resepsionis.com', '$2y$10$.OTDsRtmKC0lWmEsXx9x5OWwb4PnW/w2YjBkA7R5PkobfnAYocj82', 'Y', 'RECEPTIONIST', '1718-IMG-Picture.jpg', '2022-03-15 19:28:08', '2022-03-15 19:28:08');
+(3, 'Lukman Aditiya', 'laki-laki', 'Sindanggalih', '089510396303', 'lukman@admin.com', '$2y$10$B9.csOPjkB9S4Y59oDpHoefA/M7FxAgg4qGwdBcDfL8/aZvkP.Y7K', 'Y', 'ADMIN', '7209-IMG-Picture.jpg', '2022-03-15 19:14:51', '2022-03-15 19:14:51'),
+(4, 'Lukman Aditiya', 'laki-laki', 'Indonesia', '089510396303', 'lukman@resepsionis.com', '$2y$10$G6olfgO4UjB1ZnK81vq7Rud5ekZcdHaySwXHutxWu7ccgN7RAol9W', 'Y', 'RECEPTIONIST', '7224-IMG-Picture.jpg', '2022-03-15 19:28:08', '2022-03-15 19:28:08');
 
 -- --------------------------------------------------------
 

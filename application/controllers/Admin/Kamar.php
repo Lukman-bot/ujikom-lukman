@@ -29,7 +29,6 @@ class Kamar extends CI_Controller
     public function Add()
     {
         $this->form_validation->set_rules('namakamar','namakamar','required');
-        $this->form_validation->set_rules('jumlahbed','jumlahbed','required|numeric');
         $this->form_validation->set_rules('harga','harga','required|numeric');
         $this->form_validation->set_rules('jumlahqty','jumlahqty','required|numeric');
         $this->form_validation->set_rules('description','description','required');
@@ -54,7 +53,6 @@ class Kamar extends CI_Controller
             // Proses Penyimpanan Kamar
             $datakamar = [
                 'namakamar'     => $this->input->post('namakamar'),
-                'jumlahbed'     => $this->input->post('jumlahbed'),
                 'harga'         => $this->input->post('harga'),
                 'jumlahqty'     => $this->input->post('jumlahqty'),
                 'description'   => $this->input->post('description'),
@@ -77,7 +75,7 @@ class Kamar extends CI_Controller
             // Proses Penyimpanan Kamar Galery
             $acak = rand(1000,9999);
             $foto = $acak . '-IMG-Picture.jpg';
-            $config['upload_path']        = './upload/';
+            $config['upload_path']        = './upload/kamar';
             $config['allowed_types']      = 'jpg|jpeg|png|JPG|PNG';
             $config['max_size']           = 6024;
             $config['max_width']          = 0;
@@ -107,7 +105,6 @@ class Kamar extends CI_Controller
     public function Ubah($id=null)
     {
         $this->form_validation->set_rules('namakamar','namakamar','required');
-        $this->form_validation->set_rules('jumlahbed','jumlahbed','required|numeric');
         $this->form_validation->set_rules('harga','harga','required|numeric');
         $this->form_validation->set_rules('jumlahqty','jumlahqty','required|numeric');
         $this->form_validation->set_rules('description','description','required');
@@ -133,7 +130,6 @@ class Kamar extends CI_Controller
             // Proses Penyimpanan Kamar
             $datakamar = [
                 'namakamar'     => $this->input->post('namakamar'),
-                'jumlahbed'     => $this->input->post('jumlahbed'),
                 'harga'         => $this->input->post('harga'),
                 'jumlahqty'     => $this->input->post('jumlahqty'),
                 'description'   => $this->input->post('description'),
@@ -146,7 +142,7 @@ class Kamar extends CI_Controller
             if (!empty($_FILES['galery']['name'])) {
                 $acak = rand(1000,9999);
                 $foto = $acak . '-IMG-Picture.jpg';
-                $config['upload_path']        = './upload/';
+                $config['upload_path']        = './upload/kamar';
                 $config['allowed_types']      = 'jpg|jpeg|png|JPG|PNG';
                 $config['max_size']           = 6024;
                 $config['max_width']          = 0;

@@ -31,7 +31,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?= base_url('index.php/Auth') ?>"><b>Hotel AYO!!</b></a>
+    <a href="<?= base_url('index.php/Admin/Auth') ?>"><b>Hotel AYO!!</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -39,7 +39,7 @@
     <?=
         $this->session->flashdata('pesan');
     ?>
-    <form action="<?= base_url() ?>index.php/Auth/" method="post">
+    <form action="<?= base_url() ?>index.php/Admin/Auth/" method="post">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="username" value="<?= set_value('username') ?>">
         <div class="text-danger"><?= form_error('username') ?></div>

@@ -30,7 +30,7 @@
                             echo "<tr>";
                                 echo "<td>$no</td>";
                                 echo "<td>$tampilkan->namafasilitas</td>";
-                                echo "<td><img src=".base_url('upload/').$tampilkan->picture." width='100' ></td>";
+                                echo "<td><img src=".base_url('upload/hotel/').$tampilkan->picture." width='100' ></td>";
                                 echo "<td><a href=".base_url('index.php/Admin/FasilitasHotel/Ubah/').$tampilkan->idfasilitas."><button class='btn btn-primary btn-xs'><li class='fa fa-list'></li></button></a></td>";
                             echo "</tr>";
                             $no ++;

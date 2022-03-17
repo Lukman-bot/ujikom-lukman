@@ -51,7 +51,7 @@ class User extends CI_Controller
         }else{
             $acak = rand(1000,9999);
             $foto = $acak . '-IMG-Picture.jpg';
-            $config['upload_path']          = './upload';
+            $config['upload_path']          = './upload/user';
             $config['allowed_types']        = 'jpg|jpeg|png|JPG|PNG';
             $config['max_size']             = 6024;
             $config['max_width']            = 0;
@@ -112,7 +112,7 @@ class User extends CI_Controller
         } else {
             $acak = rand(1000,9999);
             $foto = $acak . '-IMG-Picture.jpg';
-            $config['upload_path']          = './upload';
+            $config['upload_path']          = './upload/user';
             $config['allowed_types']        = 'jpg|jpeg|png|JPG|PNG';
             $config['max_size']             = 6024;
             $config['max_width']            = 0;
@@ -135,7 +135,7 @@ class User extends CI_Controller
                     'role'          => $this->input->post('role',TRUE),
                 ];
                 $this->user->Ubah($dataubahtanpagambar,['idusers' => $id]);
-                $this->session->set_flashdata('pesan','<div class="alert alert-success">Data berhasil di perbaharui.!');
+                $this->session->set_flashdata('pesan','Data berhasil di perbaharui.!');
                 redirect('Admin/User','refresh');
             } else {
                 // Jika di ubah dengan gambar

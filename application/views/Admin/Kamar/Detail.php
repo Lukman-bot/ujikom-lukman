@@ -76,7 +76,7 @@
         console.log(res)
         res.datakamar.map((x) => {
             $('#gambarkamar').append(
-                '<img src="<?= base_url() ?>upload/' + x.url + '" class="img img-thumbnail" >'
+                '<img src="<?= base_url() ?>upload/kamar/' + x.url + '" class="img img-thumbnail" >'
             )
             $('#namakamar').html(x.namakamar)
             $('#tipekamar').html(x.tipekamar)

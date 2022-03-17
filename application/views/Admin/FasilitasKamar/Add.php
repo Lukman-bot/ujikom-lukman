@@ -1,6 +1,8 @@
-<?=
-    $this->session->flashdata('pesan');
-?>
+<?php if ($this->session->flashdata('pesan')) : ?>
+    <div class="alert alert-success">
+        <?= $this->session->flashdata('pesan') ?>
+    </div>
+<?php endif ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">

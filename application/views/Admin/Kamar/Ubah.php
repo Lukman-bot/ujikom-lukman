@@ -1,6 +1,8 @@
-<?=
-    $this->session->flashdata('pesan');
-?>
+<?php if ($this->session->flashdata('pesan')) : ?>
+    <div class="alert alert-success">
+        <?= $this->session->flashdata('pesan') ?>
+    </div>
+<?php endif ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">
@@ -13,11 +15,6 @@
                         <label>Nama Kamar</label>
                         <input type="text" class="form form-control" name="namakamar">
                         <div class="text-danger"><?= form_error('namakamar') ?></div>
-                    </div>
-                    <div class="form-group">
-                        <label>Jumlah Bed</label>
-                        <input type="number" class="form form-control" name="jumlahbed">
-                        <div class="text-danger"><?= form_error('jumlahbed') ?></div>
                     </div>
                     <div class="form-group">
                         <label>Harga Kamar</label>
@@ -84,7 +81,6 @@
         getTipeKamar()
         res.datakamar.map((x) => {
             $('input[name="namakamar"]').val(x.namakamar)
-            $('input[name="jumlahbed"]').val(x.jumlahbed)
             $('input[name="harga"]').val(x.harga)
             $('input[name="jumlahqty"]').val(x.jumlahqty)
             $('#description').html(x.description) 
@@ -92,7 +88,7 @@
             $('#tipekamar').val(x.tipekamarid)
         })
         res.datagalerykamar.map((x) => {
-            $('#gambarkamar').prop('src', "<?= base_url() ?>/upload/" + x.url)
+            $('#gambarkamar').prop('src', "<?= base_url() ?>/upload/kamar/" + x.url)
             $('input[name="idgalery"]').val(x.idkamargalery)
         })
     })

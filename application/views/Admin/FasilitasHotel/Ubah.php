@@ -1,6 +1,8 @@
-<?=
-    $this->session->flashdata('pesan');
-?>
+<?php if ($this->session->flashdata('pesan')) : ?>
+    <div class="alert alert-success">
+        <?= $this->session->flashdata('pesan') ?>
+    </div>
+<?php endif ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">
@@ -19,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label>Gambar</label>
-                    <img src="<?= base_url('upload/') ?><?= $tampilkan->picture ?>" alt="" width="200" class="img img-thumbnail">
+                    <img src="<?= base_url('upload/hotel/') ?><?= $tampilkan->picture ?>" alt="" width="200" class="img img-thumbnail">
                 </div>
                 <div class="form-group">
                     <label>Ubah Gambar</label> <BR></BR>
