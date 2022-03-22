@@ -13,16 +13,29 @@
             </div>
             <div class="box-body">
                 <form action="<?= base_url() ?>index.php/Admin/TipeKamar/Add" method="POST">
+
                     <div class="form-group">
                         <label>Tipe Kamar</label>
                         <input type="text" class="form form-control" name="tipekamar">
                         <div class="text-danger"><?= form_error('tipekamar') ?></div>
                     </div>
+
+                    <div class="form-group">
+                        <label>Status Aktif</label>
+                        <select name="is_active" id="is_active" class="form form-control">
+                            <option value="">-- STATUS AKTIF --</option>
+                            <option value="Yes">YES</option>
+                            <option value="No">NO</option>
+                        </select>
+                        <div class="text-danger"><?= form_error('is_active') ?></div>
+                    </div>
+
                     <div class="col-md-12 col-xs-12">
                         <button type="submit" class="btn btn-primary btn-md btn-block">
                             <li class="fa fa-save">SIMPAN</li>
                         </button>
                     </div>
+                    
                 </form>
             </div>
         </div>

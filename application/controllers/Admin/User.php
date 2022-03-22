@@ -51,7 +51,7 @@ class User extends CI_Controller
         }else{
             $acak = rand(1000,9999);
             $foto = $acak . '-IMG-Picture.jpg';
-            $config['upload_path']          = './upload/user';
+            $config['upload_path']          = './upload/user/';
             $config['allowed_types']        = 'jpg|jpeg|png|JPG|PNG';
             $config['max_size']             = 6024;
             $config['max_width']            = 0;

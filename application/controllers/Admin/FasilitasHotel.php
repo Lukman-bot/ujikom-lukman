@@ -29,6 +29,7 @@ class FasilitasHotel extends CI_Controller
     public function Add()
     {
         $this->form_validation->set_rules('namafasilitas','Nama Fasilitas','required');
+        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong.!');
         if($this->form_validation->run()== FALSE) 
         {
@@ -60,6 +61,7 @@ class FasilitasHotel extends CI_Controller
             }else {
                 $data=[
                     'namafasilitas'     => $this->input->post('namafasilitas'),
+                    'is_active'         => $this->input->post('is_active'),
                     'picture'           => $foto,
                     'jenisfasilitas'    => 'Hotel'
                 ];
@@ -74,6 +76,7 @@ class FasilitasHotel extends CI_Controller
     public function Ubah($id = null)
     {
         $this->form_validation->set_rules('namafasilitas','Nama Fasilitas','required');
+        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong.!');
         if ($this->form_validation->run()== FALSE) 
         {
@@ -104,7 +107,8 @@ class FasilitasHotel extends CI_Controller
             if (!$this->upload->do_upload('galery')) {
                 // Jika diubah tanpa gambar 
                 $dataubahtanpagambar=[
-                    'namafasilitas' => $this->input->post('namafasilitas')
+                    'namafasilitas' => $this->input->post('namafasilitas'),
+                    'is_active'     => $this->input->post('is_active')
                 ];
                 $this->MFH->Ubah($dataubahtanpagambar,['idfasilitas' => $id]);
                 $this->session->set_flashdata('pesan','Data berhasil di perbaharui.!');
@@ -113,6 +117,7 @@ class FasilitasHotel extends CI_Controller
                 // Jika di ubah dengan gambar
                 $data=[
                     'namafasilitas'     => $this->input->post('namafasilitas'),
+                    'is_active'         => $this->input->post('is_active'),
                     'picture'           => $foto,
                 ];
                 $this->MFH->Ubah($data,['idfasilitas'=> $id]);

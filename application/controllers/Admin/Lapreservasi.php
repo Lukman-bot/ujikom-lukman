@@ -8,6 +8,7 @@ class Lapreservasi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Mod_laporan','ML');
+        $this->load->model('Mod_reservasi', 'MR');
         cek_login();
     }
 
@@ -19,9 +20,9 @@ class Lapreservasi extends CI_Controller
                 'subjudul'              => 'Reservasi',
                 'breadcrumb1'           => 'Laporan',
                 'breadcrumb2'           => 'Reservasi',
-                'menu_navigation'       => 'Master',
+                'menu_navigation'       => 'Laporan',
                 'submenu_navigation'    => 'Laporan Reservasi',
-            // 'datatipekamar'         => $this->ML->AmbilALL()->result()
+                'datareservasi'         => $this->MR->AmbilDataReservasi()->result()
         ];
         $this->template->load('Admin/Template', 'Admin/LaporanReservasi/Index',$data);
     }
@@ -38,7 +39,7 @@ class Lapreservasi extends CI_Controller
                 'subjudul'              => 'Reservasi',
                 'breadcrumb1'           => 'Laporan',
                 'breadcrumb2'           => 'Reservasi',
-                'menu_navigation'       => 'Master',
+                'menu_navigation'       => 'Laporan',
                 'submenu_navigation'    => 'Laporan Reservasi',
                 'tanggalawal'           => $this->input->post('tanggalawal'),
                 'tanggalakhir'          => $this->input->post('tanggalakhir'),
@@ -60,7 +61,7 @@ class Lapreservasi extends CI_Controller
                 'subjudul'              => 'Reservasi',
                 'breadcrumb1'           => 'Laporan',
                 'breadcrumb2'           => 'Reservasi',
-                'menu_navigation'       => 'Master',
+                'menu_navigation'       => 'Laporan',
                 'submenu_navigation'    => 'Laporan Reservasi',
                 'tanggal'               => $this->input->post('tanggal'),
                 'status'                => $this->input->post('status'),

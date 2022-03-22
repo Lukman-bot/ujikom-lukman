@@ -44,6 +44,7 @@
                                 echo "<td>$tampilkan->qtykamar</td>";
                                 echo "<td>$tampilkan->status</td>";
                             echo "</tr>";
+                            $no++;
                         }
                     ?>
                 </table>

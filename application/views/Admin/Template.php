@@ -32,7 +32,7 @@
 
   <header class="main-header">
 
-    <a href="index2.html" class="logo">
+    <a href="<?= base_url('index.php/Admin/Dashboard') ?>" class="logo">
       <span class="logo-mini"><b>A</b>YO</span>
       <span class="logo-lg"><b>Hotel Ayo!!</b></span>
     </a>

@@ -21,7 +21,7 @@
                         <div class="text-danger"><?= form_error('namauser') ?></div>
                     </div>
                     <div class="form-group">
-                        <label>Nama User</label>
+                        <label>Jenis Kelamin</label>
                         <select name="jk" id="jk" class="form form-control">
                             <option value="">-- JENIS KELAMIN --</option>
                             <option value="laki-laki">LAKI-LAKI</option>

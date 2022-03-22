@@ -29,6 +29,7 @@ class TipeKamar extends CI_Controller
     public function Add()
     {
         $this->form_validation->set_rules('tipekamar','Tipe Kamar','required');
+        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         if($this->form_validation->run() == false) 
         {
@@ -45,6 +46,7 @@ class TipeKamar extends CI_Controller
         }else{
             $data=[
                 'tipekamar'     => $this->input->post('tipekamar',TRUE),
+                'is_active'     => $this->input->post('is_active', TRUE)
             ];
             $this->MTK->Simpan($data);
             $this->session->set_flashdata('pesan','Data berhasil di simpan.!');
@@ -55,6 +57,7 @@ class TipeKamar extends CI_Controller
     public function Ubah($id=null)
     {
         $this->form_validation->set_rules('tipekamar','Tipe Kamar','required');
+        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         if($this->form_validation->run() == FALSE)
         {
@@ -72,7 +75,8 @@ class TipeKamar extends CI_Controller
             $this->template->load('Admin/Template', 'Admin/TipeKamar/Ubah',$data);
         } else {
             $data=[
-                'tipekamar'     => $this->input->POST('tipekamar',TRUE)
+                'tipekamar'     => $this->input->POST('tipekamar',TRUE),
+                'is_active'     => $this->input->post('is_active', TRUE)
             ];
             $this->MTK->Ubah($data,['idtipekamar'=>$id]);
             $this->session->set_flashdata('pesan','Data Tipe Kamar berhasil di perbaharui');

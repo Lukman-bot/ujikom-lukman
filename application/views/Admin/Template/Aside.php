@@ -34,12 +34,12 @@
           <li class="active"><a href="<?= base_url('index.php/Admin/Kamar/') ?>"><i class="fa fa-hotel"></i> <span>Kamar</span></a></li>
           <li class="active"><a href="<?= base_url('index.php/Admin/User/') ?>"><i class="fa fa-user"></i> <span>Users</span></a></li>
           <li class="header">MASTER TAMU</li>
-          <li class="active"><a href="#"><i class="fa fa-users"></i> <span>Data Tamu</span></a></li>
+          <li class="active"><a href="<?= base_url('index.php/Admin/Tamu/') ?>"><i class="fa fa-users"></i> <span>Data Tamu</span></a></li>
           <li class="header">TRANSAKSI</li>
           <li class="active"><a href="<?= base_url('index.php/Admin/Reservasi/') ?>"><i class="fa fa-book"></i> <span>Data Reservasi</span></a></li>
           <li class="header">LAPORAN</li>
-          <li class="active"><a href="<?= base_url('index.php/Admin/Lapreservasi') ?>"><i class="fa fa-file-pdf-o"></i> <span>Lap. Reservasi</span></a></li>
-          <li class="active"><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Lap. Tamu</span></a></li>
+          <li class="active"><a href="<?= base_url('index.php/Admin/Lapreservasi/') ?>"><i class="fa fa-file-pdf-o"></i> <span>Lap. Reservasi</span></a></li>
+          <li class="active"><a href="<?= base_url('index.php/Admin/Tamu/Laptamu') ?>"><i class="fa fa-file-pdf-o"></i> <span>Lap. Tamu</span></a></li>
           <li class="header">PROFILE</li>
           <li class="header">SIGN OUT</li>
         <?php } 
@@ -50,7 +50,7 @@
           <li class="active"><a href="<?= base_url('index.php/Admin/Reservasi/') ?>"><i class="fa fa-book"></i> <span>Data Reservasi</span></a></li>
           <li class="header">LAPORAN</li>
           <li class="active"><a href="<?= base_url('index.php/Admin/Lapreservasi/') ?>"><i class="fa fa-file-pdf-o"></i> <span>Lap. Reservasi</span></a></li>
-          <li class="active"><a href="#"><i class="fa fa-file-pdf-o"></i> <span>Lap. Tamu</span></a></li>
+          <li class="active"><a href="<?= base_url('index.php/Admin/Tamu/Laptamu/') ?>"><i class="fa fa-file-pdf-o"></i> <span>Lap. Tamu</span></a></li>
           <li class="header">PROFILE</li>
           <li class="header">SIGN OUT</li>
         <?php } 

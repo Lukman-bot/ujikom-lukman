@@ -2,14 +2,14 @@
     <div class="col-lg-3 col-xs-6">
         <div class="small-box bg-aqua">
             <div class="inner">
-                <h3>150</h3>
+                <h3><?= $totalreservasi ?></h3>
 
-                <p>New Orders</p>
+                <p>New Reservasi</p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?= base_url('index.php/Admin/Reservasi') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-3 col-xs-6">
@@ -65,24 +65,32 @@
             </div>
             <div class="box-body">
                 <div class="table-responsive">
-                    <table class="table no-margin">
+                    <table class="table no-margin table-hover" id="example1">
                         <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>Item</th>
+                                <th>Nama</th>
+                                <th>Tanggal Checkin</th>
+                                <th>Tanggal Checkout</th>
                                 <th>Status</th>
-                                <th>Popularity</th>
                             </tr>
                         </thead>
                         <tbody>
-                        
+                            <?php
+                                foreach ($datareservasi as $tampilkan) {
+                                    echo "<tr>";
+                                        echo "<td>$tampilkan->nama</td>";
+                                        echo "<td>$tampilkan->startdate</td>";
+                                        echo "<td>$tampilkan->enddate</td>";
+                                        echo "<td>$tampilkan->status</td>";
+                                    echo "</tr>";
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="box-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                <a href="<?= base_url('index.php/Admin/Reservasi') ?>" class="btn btn-sm btn-info btn-flat pull-right">View All Orders</a>
             </div>
         </div>
     </div>

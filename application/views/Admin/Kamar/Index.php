@@ -19,6 +19,7 @@
                             <th>Harga Kamar</th>
                             <th>Jumlah Kamar</th>
                             <th>Tipe Kamar</th>
+                            <th>Status Aktif</th>
                             <th>Option</th>
                         </tr>
                     </thead>
@@ -32,6 +33,7 @@
                             <td><?= $tampilkan->harga ?></td>
                             <td><?= $tampilkan->jumlahqty ?></td>
                             <td><?= $tampilkan->tipekamar ?></td>
+                            <td><?= $tampilkan->is_active ?></td>
                             <td>
                                 <a href="<?= base_url() ?>index.php/Admin/Kamar/Ubah/<?= $tampilkan->idkamar ?>"><button class="btn btn-primary btn-sm">
                                     <li class="fa fa-edit"></li>
@@ -44,6 +46,7 @@
                             </td>
                         </tr> 
                     <?php
+                    $no++;
                     endforeach;
                     ?>
                 </table>

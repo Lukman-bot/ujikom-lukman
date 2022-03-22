@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header">
-                <a href="<?= base_url() ?>index.php/Admin/Reservasi/Add" class="btn btn-primary btn-xs pull-right">Tambah Reservasi</a>
+            <a href="<?= base_url('index.php/Admin/ExportExcel/ExportReservasi') ?>" class="btn btn-success btn-sm pull-right"><i class="fa fa-file-excel-o"></i> Export Transaksi</a>
             </div>
             <div class="box-body">
                 <table class="table table-bordered" id="example1">
@@ -35,6 +35,7 @@
                                 echo "<td>$tampilkan->status</td>";
                                 echo "<td><a href=". base_url('index.php/Admin/Reservasi/Detail/') . $tampilkan->idreservasi."><button class='btn btn-primary btn-xs'><li class='fa fa-eye'></li></button></a></td>";
                             echo "</tr>";
+                            $no++;
                         }
                     ?>
 

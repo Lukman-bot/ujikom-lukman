@@ -30,7 +30,7 @@
                 <div class="col-md-3">
                     <div class="card mb-4 mt-2 box-shadow">
                     <div class="card-header">
-                        <img src="<?= base_url() ?>upload/<?= $tampilkankamar->url ?>" alt="" class="img img-thumbnail">
+                        <img src="<?= base_url() ?>upload/kamar/<?= $tampilkankamar->url ?>" alt="" class="img img-thumbnail">
                     </div>
                     <div class="card-body">
                         <?= $tampilkankamar->description ?>
@@ -61,7 +61,7 @@
                 <div class="col-md-6">
                     <div class="card mb-4 mt-2 box-shadow">
                     <div class="card-body">
-                        <img src="<?= base_url() ?>upload/<?= $tampilkanfasilitas->picture ?>" alt="" class="img img-thumbnail">
+                        <img src="<?= base_url() ?>upload/hotel/<?= $tampilkanfasilitas->picture ?>" alt="" class="img img-thumbnail">
                     </div>
                     <div class="card-footer">
                         <strong style="text-align: center;"><?= $tampilkanfasilitas->namafasilitas ?></strong>

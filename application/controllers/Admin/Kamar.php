@@ -32,6 +32,7 @@ class Kamar extends CI_Controller
         $this->form_validation->set_rules('harga','harga','required|numeric');
         $this->form_validation->set_rules('jumlahqty','jumlahqty','required|numeric');
         $this->form_validation->set_rules('description','description','required');
+        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         $this->form_validation->set_message('numeric','{field} Harus berupa angka');
         if($this->form_validation->run() == false) 
@@ -56,7 +57,8 @@ class Kamar extends CI_Controller
                 'harga'         => $this->input->post('harga'),
                 'jumlahqty'     => $this->input->post('jumlahqty'),
                 'description'   => $this->input->post('description'),
-                'tipekamarid'   => $this->input->post('tipekamar')
+                'tipekamarid'   => $this->input->post('tipekamar'),
+                'is_active'     => $this->input->post('is_active')
             ];
             $this->MK->Simpan($datakamar);
             $idkamar = $this->db->insert_id();
@@ -109,6 +111,7 @@ class Kamar extends CI_Controller
         $this->form_validation->set_rules('jumlahqty','jumlahqty','required|numeric');
         $this->form_validation->set_rules('description','description','required');
         $this->form_validation->set_rules('tipekamar','tipekamar','required');
+        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         $this->form_validation->set_message('numeric','{field} Harus berupa angka');
         if($this->form_validation->run() == false) 
@@ -133,7 +136,8 @@ class Kamar extends CI_Controller
                 'harga'         => $this->input->post('harga'),
                 'jumlahqty'     => $this->input->post('jumlahqty'),
                 'description'   => $this->input->post('description'),
-                'tipekamarid'   => $this->input->post('tipekamar')
+                'tipekamarid'   => $this->input->post('tipekamar'),
+                'is_active'     => $this->input->post('is_active')
             ];
             $this->db->set($datakamar);
             $this->db->where('idkamar', $id);
@@ -169,7 +173,7 @@ class Kamar extends CI_Controller
     {
         $json = $this->MK->getJsonUbahKamar($id);
         echo json_encode($json);
-    }
+    } 
 
     public function CheckFasilitas() 
     {

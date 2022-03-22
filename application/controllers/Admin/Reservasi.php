@@ -14,12 +14,12 @@ class Reservasi extends CI_Controller
     public function Index()
     {
         $data=[
-            'title'                 => 'Hotel AYO!! | Master Data',
-            'judul'                 => 'Master Data',
+            'title'                 => 'Hotel AYO!! | Reservasi',
+            'judul'                 => 'Reservasi',
             'subjudul'              => 'Reservasi',
-            'breadcrumb1'           => 'Master Data',
+            'breadcrumb1'           => 'Reservasi',
             'breadcrumb2'           => 'Reservasi',
-            'menu_navigation'       => 'Master',
+            'menu_navigation'       => 'Transaksi',
             'submenu_navigation'    => 'Reservasi',
             'datareservasi'         => $this->MR->AmbilDataReservasi()->result()
         ];
@@ -29,12 +29,12 @@ class Reservasi extends CI_Controller
     public function Detail($id=null)
     {
         $data=[
-            'title'                 => 'Hotel AYO!! | Master Data',
-            'judul'                 => 'Master Data',
+            'title'                 => 'Hotel AYO!! | Reservasi',
+            'judul'                 => 'Reservasi',
             'subjudul'              => 'Reservasi',
-            'breadcrumb1'           => 'Master Data',
+            'breadcrumb1'           => 'Reservasi',
             'breadcrumb2'           => 'Reservasi',
-            'menu_navigation'       => 'Master',
+            'menu_navigation'       => 'Transaksi',
             'submenu_navigation'    => 'Reservasi',
             'id'                    => $id
         ];

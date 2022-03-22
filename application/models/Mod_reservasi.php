@@ -20,7 +20,7 @@ class Mod_reservasi extends CI_Model
 
     public function AmbilDataReservasi()
     {
-        $this->db->select('reservasi.idreservasi, reservasi.startdate, reservasi.qtykamar, reservasi.lama, reservasi.status, tamu.nama, kamar.namakamar');
+        $this->db->select('reservasi.idreservasi, reservasi.startdate, reservasi.enddate, reservasi.qtykamar, reservasi.lama, reservasi.status, tamu.nama, kamar.namakamar');
         $this->db->from($this->tabel);
         $this->db->join('tamu','reservasi.tamuid=tamu.idtamu','left');
         $this->db->join('kamar','reservasi.kamarid=kamar.idkamar','left');
@@ -38,6 +38,21 @@ class Mod_reservasi extends CI_Model
         return [
             'datadetail'        => $query
         ];
+    }
+
+    public function countReservasi()
+    {
+        $this->db->where('reservasi.status', 'reservasi');
+        return $this->db->count_all_results('reservasi');
+    }
+
+    public function DetailReservasi()
+    {
+        $this->db->select('reservasi.idreservasi, reservasi.enddate, reservasi.startdate, reservasi.qtykamar, reservasi.lama, reservasi.status,tamu.nik, tamu.nama,tamu.jeniskelamin,tamu.alamat,tamu.telepon, kamar.namakamar');
+        $this->db->from($this->tabel);
+        $this->db->join('tamu', 'reservasi.tamuid=tamu.idtamu', 'left');
+        $this->db->join('kamar', 'reservasi.kamarid=kamar.idkamar', 'left');
+        return $this->db->get()->result(); 
     }
 
 }
