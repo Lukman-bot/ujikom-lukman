@@ -35,7 +35,6 @@ class Tamu extends CI_Controller
         $this->form_validation->set_rules('username','Username','required');
         $this->form_validation->set_rules('password','Password','required');
         $this->form_validation->set_rules('ismember','Status Member','required');
-        $this->form_validation->set_rules('is_active','Status Aktif','required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         if($this->form_validation->run() == false) 
         {
@@ -50,38 +49,21 @@ class Tamu extends CI_Controller
             ];
             $this->template->load('Admin/Template', 'Admin/Tamu/Add',$data);
         }else{
-            $acak = rand(1000,9999);
-            $foto = $acak . '-IMG-Picture.jpg';
-            $config['upload_path']          = './upload/tamu';
-            $config['allowed_types']        = 'jpg|jpeg|png|JPG|PNG';
-            $config['max_size']             = 6024;
-            $config['max_width']            = 0;
-            $config['max_height']           = 0;
-            $config['overwrite']            = TRUE;
-            $config['file_ext_tolower']     = TRUE;
-            $config['file_name']            = $foto;
-            $this->load->library('upload', $config);
-            if(!$this->upload->do_upload('galery')) {
-                $this->session->set_flashdata('pesan','Data gagal di upload.!');
-                redirect('Admin/Tamu','refresh');
-            }else {
-                $data=[
-                    'nik'           => $this->input->post('nik',TRUE),
-                    'nama'          => $this->input->post('nama',TRUE),
-                    'jeniskelamin'  => $this->input->post('jeniskelamin',TRUE),
-                    'alamat'        => $this->input->post('alamat',TRUE),
-                    'telepon'       => $this->input->post('telepon',TRUE),
-                    'username'      => $this->input->post('username',TRUE),
-                    'password'      => $this->input->post('password', TRUE),
-                    'ismember'      => $this->input->post('ismember',TRUE),
-                    'is_active'     => $this->input->post('is_active',TRUE),
-                    'photo'         => $foto
-                ];
-                $this->tamu->Simpan($data);
+           
+            $data=[
+                'nik'           => $this->input->post('nik',TRUE),
+                'nama'          => $this->input->post('nama',TRUE),
+                'jeniskelamin'  => $this->input->post('jeniskelamin',TRUE),
+                'alamat'        => $this->input->post('alamat',TRUE),
+                'telepon'       => $this->input->post('telepon',TRUE),
+                'username'      => $this->input->post('username',TRUE),
+                'password'      => $this->input->post('password', TRUE),
+                'ismember'      => $this->input->post('ismember',TRUE),
+            ];
+            $this->tamu->Simpan($data);
                 
-                $this->session->set_flashdata('pesan','Data berhasil di simpan.!');
-                redirect('Admin/Tamu', 'refresh');
-            }
+            $this->session->set_flashdata('pesan','Data berhasil di simpan.!');
+            redirect('Admin/Tamu', 'refresh');
         }
     }
 
@@ -95,7 +77,6 @@ class Tamu extends CI_Controller
         $this->form_validation->set_rules('username','Username','required');
         $this->form_validation->set_rules('password','Password','required');
         $this->form_validation->set_rules('ismember','Status Member','required');
-        $this->form_validation->set_rules('is_active','Status Aktif','required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         if ($this->form_validation->run()== FALSE) 
         {
@@ -112,53 +93,21 @@ class Tamu extends CI_Controller
             ];
             $this->template->load('Admin/Template', 'Admin/Tamu/Ubah',$data);
         } else {
-            $acak = rand(1000,9999);
-            $foto = $acak . '-IMG-Picture.jpg';
-            $config['upload_path']          = './upload/tamu';
-            $config['allowed_types']        = 'jpg|jpeg|png|JPG|PNG';
-            $config['max_size']             = 6024;
-            $config['max_width']            = 0;
-            $config['max_height']           = 0;
-            $config['overwrite']            = TRUE;
-            $config['file_ext_tolower']     = TRUE;
-            $config['file_name']            = $foto;
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('galery')) {
-                // Jika diubah tanpa gambar 
-                $dataubahtanpagambar=[
-                    'nik'           => $this->input->post('nik',TRUE),
-                    'nama'          => $this->input->post('nama',TRUE),
-                    'jeniskelamin'  => $this->input->post('jeniskelamin',TRUE),
-                    'alamat'        => $this->input->post('alamat',TRUE),
-                    'telepon'       => $this->input->post('telepon',TRUE),
-                    'username'      => $this->input->post('username',TRUE),
-                    'password'      => $this->input->post('password', TRUE),
-                    'ismember'      => $this->input->post('ismember',TRUE),
-                    'is_active'     => $this->input->post('is_active',TRUE),
-                    'photo'         => $foto
-                ];
-                $this->tamu->Ubah($dataubahtanpagambar,['idtamu' => $id]);
-                $this->session->set_flashdata('pesan','Data berhasil di perbaharui.!');
-                redirect('Admin/Tamu','refresh');
-            } else {
-                // Jika di ubah dengan gambar
-                $data=[
-                    'nik'           => $this->input->post('nik',TRUE),
-                    'nama'          => $this->input->post('nama',TRUE),
-                    'jeniskelamin'  => $this->input->post('jeniskelamin',TRUE),
-                    'alamat'        => $this->input->post('alamat',TRUE),
-                    'telepon'       => $this->input->post('telepon',TRUE),
-                    'username'      => $this->input->post('username',TRUE),
-                    'password'      => $this->input->post('password', TRUE),
-                    'ismember'      => $this->input->post('ismember',TRUE),
-                    'is_active'     => $this->input->post('is_active',TRUE),
-                    'photo'         => $foto
-                ];
-                $this->tamu->Ubah($data,['idtamu'=> $id]);
+            
+            $data=[
+                'nik'           => $this->input->post('nik',TRUE),
+                'nama'          => $this->input->post('nama',TRUE),
+                'jeniskelamin'  => $this->input->post('jeniskelamin',TRUE),
+                'alamat'        => $this->input->post('alamat',TRUE),
+                'telepon'       => $this->input->post('telepon',TRUE),
+                'username'      => $this->input->post('username',TRUE),
+                'password'      => $this->input->post('password', TRUE),
+                'ismember'      => $this->input->post('ismember',TRUE)
+            ];
+            $this->tamu->Ubah($data,['idtamu'=> $id]);
                 
-                $this->session->set_flashdata('pesan','Data berhasil di Perbaharui.!');
-                redirect('Admin/Tamu', 'refresh');
-            }
+            $this->session->set_flashdata('pesan','Data berhasil di Perbaharui.!');
+            redirect('Admin/Tamu', 'refresh');
         }
     }
 

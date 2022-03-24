@@ -47,15 +47,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Status Aktif</label>
-                        <select name="is_active" id="is_active" class="form form-control">
-                            <option value="">-- STATUS AKTIF --</option>
-                            <option value="Yes">YES</option>
-                            <option value="No">NO</option>
-                        </select>
-                        <div class="text-danger"><?= form_error('is_active') ?></div>
-                    </div>
-                    <div class="form-group">
                         <label>Gambar Kamar</label>
                         <img src="" alt="" class="img img-thumbnail" id="gambarkamar">
                         <input type="hidden" name="idgalery">
@@ -94,8 +85,7 @@
             $('input[name="jumlahqty"]').val(x.jumlahqty)
             $('#description').html(x.description) 
             $('input[name="namakamar"]').val(x.namakamar)
-            $('#tipekamar').val(x.tipekamarid)
-            $('select[name="is_active"]').val(x.is_active)
+            $('#tipekamar').val(x.tipekamarid) 
         })
         res.datagalerykamar.map((x) => {
             $('#gambarkamar').prop('src', "<?= base_url() ?>/upload/kamar/" + x.url)

@@ -20,7 +20,6 @@
                         <tr>
                             <th>#</th>
                             <th>Fasilitas</th>
-                            <th>Status Aktif</th>
                             <th>Picture</th>
                             <th>Option</th>
                         </tr>
@@ -31,7 +30,6 @@
                             echo "<tr>";
                                 echo "<td>$no</td>";
                                 echo "<td>$tampilkan->namafasilitas</td>";
-                                echo "<td>$tampilkan->is_active</td>";
                                 echo "<td><img src=".base_url('upload/hotel/').$tampilkan->picture." width='100' ></td>";
                                 echo "<td><a href=".base_url('index.php/Admin/FasilitasHotel/Ubah/').$tampilkan->idfasilitas."><button class='btn btn-primary btn-xs'><li class='fa fa-list'></li></button></a></td>";
                             echo "</tr>";

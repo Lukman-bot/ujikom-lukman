@@ -23,16 +23,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Status Aktif</label>
-                        <select name="is_active" id="is_active" class="form form-control">
-                            <option value="">-- STATUS AKTIF --</option>
-                            <option value="Yes">YES</option>
-                            <option value="No">NO</option>
-                        </select>
-                        <div class="text-danger"><?= form_error('is_active') ?></div>
-                    </div>
-
-                    <div class="form-group">
                         <label>Picture / Gambar</label>
                         <input type="file" class="form form-control" name="galery">
                         <div class="text-danger"><?= form_error('galery') ?></div>

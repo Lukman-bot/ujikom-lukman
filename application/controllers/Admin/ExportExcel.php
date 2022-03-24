@@ -180,7 +180,6 @@ class ExportExcel extends CI_Controller
 		$sheet->setCellValue('F3', "NOMOR TELEPON");
         $sheet->setCellValue('G3', "USERNAME");
         $sheet->setCellValue('H3', "STATUS MEMBER");
-        $sheet->setCellValue('I3', "STATUS AKTIF");
 
 		$sheet->getStyle('A3')->applyFromArray($style_col);
 		$sheet->getStyle('B3')->applyFromArray($style_col);
@@ -190,7 +189,6 @@ class ExportExcel extends CI_Controller
 		$sheet->getStyle('F3')->applyFromArray($style_col);
         $sheet->getStyle('G3')->applyFromArray($style_col);
         $sheet->getStyle('H3')->applyFromArray($style_col);
-        $sheet->getStyle('I3')->applyFromArray($style_col);
 
 		$tamu = $this->MT->AmbilTamu();
 
@@ -205,7 +203,6 @@ class ExportExcel extends CI_Controller
 			$sheet->setCellValue('F'.$numrow, $data->telepon);
             $sheet->setCellValue('G'.$numrow, $data->username);
             $sheet->setCellValue('H'.$numrow, $data->ismember);
-            $sheet->setCellValue('I'.$numrow, $data->is_active);
 
 			$sheet->getStyle('A'.$numrow)->applyFromArray($style_row);
 			$sheet->getStyle('B'.$numrow)->applyFromArray($style_row);
@@ -215,7 +212,6 @@ class ExportExcel extends CI_Controller
 			$sheet->getStyle('F'.$numrow)->applyFromArray($style_row);
             $sheet->getStyle('G'.$numrow)->applyFromArray($style_row);
             $sheet->getStyle('H'.$numrow)->applyFromArray($style_row);
-            $sheet->getStyle('I'.$numrow)->applyFromArray($style_row);
 
 			$no++;
 			$numrow++;
@@ -229,7 +225,6 @@ class ExportExcel extends CI_Controller
 		$sheet->getColumnDimension('F')->setWidth(20);
         $sheet->getColumnDimension('G')->setWidth(20);
         $sheet->getColumnDimension('H')->setWidth(25);
-        $sheet->getColumnDimension('I')->setWidth(25);
 
 		$sheet->getDefaultRowDimension()->setRowHeight(-1);
 

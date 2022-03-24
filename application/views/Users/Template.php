@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>_assets/users/font-awesome/css/font-awesome.min.css" />
     <!-- Custom styles for this template -->
     <link href="<?= base_url() ?>_assets/users/dist/css/carousel.css" rel="stylesheet" />
+    <script src="<?= base_url() ?>_assets/bower_components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
     <header>
@@ -39,9 +40,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Kamar<span class="sr-only">(current)</span></a
-              >
+              <a class="nav-link" href="#">Kamar<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Fasilitas</a>
@@ -159,11 +158,11 @@
     <script src="<?= base_url() ?>_assets/users/assets/js/vendor/holder.min.js"></script>
     <script type="text/javascript">
         var sess = "<?= $this->session->userdata('nama_user'); ?>"
-        if (sess = '') {
-            $('#nama_users').html('');
+        if (sess == '') {
+            $('#nama_users').html('')
             $('#btn_login').html(
                 `
-                <a href="<?= base_url('index.php/Auth') ?>">
+                <a href="<?= base_url() ?>index.php/Auth">
                     <button class="btn btn-outline-success my-2 my-sm-0">
                         <li class="fa fa-lock"></li>
                         Login
@@ -180,7 +179,7 @@
             )
             $('#btn_login').html(
                 `
-                <a href="<?= base_url('index.php/Auth/Logout') ?>">
+                <a href="<?= base_url() ?>index.php/Auth/Logout">
                     <button class="btn btn-outline-success my-2 my-sm-0">
                         <li class="fa fa-lock"></li>
                         Logout

@@ -40,7 +40,7 @@
                         <strong>Rp. <?php number_format($tampilkankamar->harga, 0, ',',',') ?></strong>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a href="detail.html"> <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button></a>
+                            <a href="<?= base_url() ?>index.php/Kamar/Detail/<?= $tampilkankamar->idkamar ?>"> <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button></a>
                             <button type="button" class="btn btn-sm btn-outline-secondary">Book Now</button>
                         </div>
                         <small class="text-muted">9</small><li class="fa fa-comments"></li>

@@ -14,22 +14,17 @@
                 <?php
                     foreach($datatipekamar as $tampilkan) :
                 ?>
+                
                     <div class="form-group">
                         <label>Tipe Kamar</label>
                         <input type="text" class="form form-control" name="tipekamar" value="<?= $tampilkan->tipekamar ?>">
                         <div class="text-danger"><?= form_error('tipekamar') ?></div>
                     </div>
-                    <div class="form-group">
-                        <label>Status Aktif</label>
-                        <select name="is_active" id="is_active" class="form form-control" value="<?= $tampilkan->is_active ?>">
-                            <option value="Yes">YES</option>
-                            <option value="No">NO</option>
-                        </select>
-                        <div class="text-danger"><?= form_error('is_active') ?></div>
-                    </div>
+
                     <div class="form-group">
                         <button class="btn btn-primary btn-md" type="submit">PERBAHARUI</button>
                     </div>
+
                 <?php
                 endforeach;
                 ?>

@@ -86,7 +86,9 @@
         })
         res.datafasilitas.map((x) => {
             $('#fasilitas').append(
-                '<li class="' + x.icon + ' fa-3x" style="color:green;"></li>'
+                `
+                <li class="${x.icon} fa-2x" style="color:green;">${x.namafasilitas}</li>
+                `
             )
         })
         res.datarating.map((x) => {

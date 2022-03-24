@@ -7,11 +7,15 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box">
-            <div class="box-header">
-                <a href="<?= base_url() ?>index.php/Admin/Kamar/Add" class="btn btn-primary btn-xs pull-right">Tambah Kamar</a>
+            <div class="box-header with-border">
+                <a href="<?= base_url() ?>index.php/Admin/Kamar/Add">
+                    <button class="btn btn-primary btn-md pull-right">
+                        <li class="fa fa-plus"></li> Tambah Kamar
+                    </button>
+                </a>
             </div>
-            <div class="box-body">
-                <table class="table table-bordered" id="example1">
+            <div class="box-body table-responsive">
+                <table class="table table-hover" id="example1">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -19,7 +23,6 @@
                             <th>Harga Kamar</th>
                             <th>Jumlah Kamar</th>
                             <th>Tipe Kamar</th>
-                            <th>Status Aktif</th>
                             <th>Option</th>
                         </tr>
                     </thead>
@@ -33,7 +36,6 @@
                             <td><?= $tampilkan->harga ?></td>
                             <td><?= $tampilkan->jumlahqty ?></td>
                             <td><?= $tampilkan->tipekamar ?></td>
-                            <td><?= $tampilkan->is_active ?></td>
                             <td>
                                 <a href="<?= base_url() ?>index.php/Admin/Kamar/Ubah/<?= $tampilkan->idkamar ?>"><button class="btn btn-primary btn-sm">
                                     <li class="fa fa-edit"></li>

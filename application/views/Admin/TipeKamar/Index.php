@@ -21,7 +21,6 @@
                         <tr>
                             <th>#</th>
                             <th>Tipe Kamar</th>
-                            <th>Status Aktif</th>
                             <th>Option</th>
                         </tr>
                     </thead>
@@ -31,7 +30,6 @@
                             echo "<tr>";
                             echo "<td>$no</td>";
                             echo "<td>$tampilkan->tipekamar</td>";
-                            echo "<td>$tampilkan->is_active</td>";
                             echo "<td><a href=".base_url().'index.php/Admin/TipeKamar/Ubah/'.$tampilkan->idtipekamar."><button class='btn btn-primary btn-xs'>Ubah</button></a></td>";
                             echo "</tr>";
                             $no++;

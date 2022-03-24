@@ -26,8 +26,6 @@
                             <th>Nomor Telepon</th>
                             <th>Username</th>
                             <th>Member</th>
-                            <th>Aktif</th>
-                            <th>Photo</th>
                             <th>Option</th>
                         </tr>
                     </thead>
@@ -43,8 +41,6 @@
                                 echo "<td>$tampilkan->telepon</td>";
                                 echo "<td>$tampilkan->username</td>";
                                 echo "<td>$tampilkan->ismember</td>";
-                                echo "<td>$tampilkan->is_active</td>";
-                                echo "<td><img src=".base_url('upload/tamu/').$tampilkan->photo." width='100' ></td>";
                                 echo "<td><a href=".base_url('index.php/Admin/Tamu/Ubah/').$tampilkan->idtamu."><button class='btn btn-primary btn-xs'><li class='fa fa-list'></li></button></a></td>";
                             echo "</tr>";
                             $no ++;

@@ -16,7 +16,6 @@
                             <th>Nomor Telepon</th>
                             <th>Username</th>
                             <th>Status Member</th>
-                            <th>Status Aktif</th>
                             <!-- <th id="option">Option</th> -->
                         </tr>
                     </thead>
@@ -32,7 +31,6 @@
                                 <td><?= $tampilkan->telepon ?></td>
                                 <td><?= $tampilkan->username ?></td>
                                 <td><?= $tampilkan->ismember ?></td>
-                                <td><?= $tampilkan->is_active ?></td>
                                 <!-- <td>
                                     <a href="<?= base_url() ?>index.php/Admin/Tamu/LapPertamu/<?= $tampilkan->idtamu ?>">
                                         <button class="btn btn-warning btn-xs">

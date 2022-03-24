@@ -30,7 +30,6 @@ class FasilitasKamar extends CI_Controller
     {
         $this->form_validation->set_rules('fasilitaskamar','Fasilitas Kamar','required');
         $this->form_validation->set_rules('icon','Icon','required');
-        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         if($this->form_validation->run() == false) 
         {
@@ -49,7 +48,6 @@ class FasilitasKamar extends CI_Controller
             $data=[
                 'namafasilitas'     => $this->input->post('fasilitaskamar',TRUE),
                 'icon'              => $this->input->post('icon',TRUE),
-                'is_active'         => $this->input->post('is_active', TRUE),
                 'jenisfasilitas'    => 'Kamar'
             ];
             $this->MFK->Simpan($data);
@@ -62,7 +60,6 @@ class FasilitasKamar extends CI_Controller
     {
         $this->form_validation->set_rules('fasilitaskamar','Fasilitas Kamar','required');
         $this->form_validation->set_rules('icon','Icon','required');
-        $this->form_validation->set_rules('is_active', 'is_active', 'required');
         $this->form_validation->set_message('required','{field} tidak boleh kosong');
         if($this->form_validation->run() == false) 
         {
@@ -78,11 +75,10 @@ class FasilitasKamar extends CI_Controller
                 'datafasilitaskamar'    => $this->MFK->Ambil(['idfasilitas'=>$id])->result()
             ];
             $this->template->load('Admin/Template', 'Admin/FasilitasKamar/Ubah',$data);
-        }else{
+        }else{ 
             $data=[
                 'namafasilitas'     => $this->input->post('fasilitaskamar',TRUE),
                 'icon'              => $this->input->post('icon',TRUE),
-                'is_active'         => $this->input->post('is_active', TRUE),
                 'jenisfasilitas'    => 'Kamar'
             ];
             $this->MFK->Ubah($data, ['idfasilitas' => $id]);  

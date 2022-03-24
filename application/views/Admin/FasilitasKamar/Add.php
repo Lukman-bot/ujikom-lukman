@@ -11,28 +11,21 @@
             </div>
             <div class="box-body">
                 <form action="<?= base_url() ?>index.php/Admin/FasilitasKamar/Add" method="POST">
-                <div class="form-group">
-                    <label>Fasilitas Kamar</label>
-                    <input type="text" class="form form-control" name="fasilitaskamar">
-                    <div class="text-danger"><?= form_error('fasilitaskamar') ?></div>
-                </div>
-                <div class="form-group">
-                    <label>Icon</label>
-                    <input type="text" class="form form-control" name="icon">
-                    <div class="text-danger"><?= form_error('icon') ?></div>
-                </div>
-                <div class="form-group">
-                    <label>Status Aktif</label>
-                    <select name="is_active" id="is_active" class="form form-control">
-                        <option value="">-- STATUS AKTIF --</option>
-                        <option value="Yes">YES</option>
-                        <option value="No">NO</option>
-                    </select>
-                    <div class="text-danger"><?= form_error('is_active') ?></div>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-md" type="submit">SIMPAN</button>
-                </div>
+                    <div class="form-group">
+                        <label>Fasilitas Kamar</label>
+                        <input type="text" class="form form-control" name="fasilitaskamar">
+                        <div class="text-danger"><?= form_error('fasilitaskamar') ?></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Icon</label>
+                        <input type="text" class="form form-control" name="icon">
+                        <div class="text-danger"><?= form_error('icon') ?></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-md" type="submit">SIMPAN</button>
+                    </div>
                 </form>
             </div>
         </div>

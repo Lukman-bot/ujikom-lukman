@@ -75,28 +75,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Status Aktif</label>
-                            <select name="is_active" id="is_active" class="form form-control" value="<?= $tampilkan->is_active ?>">
-                                <option value="">-- STATUS AKTIF --</option>
-                                <option value="YES">YES</option>
-                                <option value="NO">NO</option>
-                            </select>
-                            <div class="text-danger"><?= form_error('is_active') ?></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Gambar</label>
-                            <img src="<?= base_url('upload/user/') ?><?= $tampilkan->photo ?>" alt="" width="200" class="img img-thumbnail">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Ubah Gambar</label> <BR></BR>
-                            <input type="file" class="form form-control" name="galery">
-                            <div class="text-danger"><?= form_error('galery') ?></div>
-                            <div class="text-danger">Jika akan dirubah silahkan pilih gambarnya.!</div>
-                        </div>
-
-                        <div class="form-group">
                             <button class="btn btn-primary btn-md" type="submit">PERBAHARUI</button>
                         </div>
 
